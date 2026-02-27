@@ -1,13 +1,20 @@
-
 import { createPublicClient, http, ContractFunctionExecutionError } from 'viem';
 import { mainnet } from 'viem/chains';
 
 export class BaseContractAdapter {
     private client;
     private address: `0x${string}`;
+    private abi: any[];
 
-    constructor(address: `0x${string}`) {
+    constructor(address: `0x${string}`, abi: any[]) {
+        if (!abi || abi.length === 0) {
+            throw new Error('Contract ABI is required');
+        }
+        if (address === '0x0000000000000000000000000000000000000000') {
+            throw new Error('Contract address is not configured');
+        }
         this.address = address;
+        this.abi = abi;
         this.client = createPublicClient({
             chain: mainnet,
             transport: http()
@@ -29,7 +36,7 @@ export class BaseContractAdapter {
     async readState(functionName: string, args: any[] = []) {
         return this.retryCall(() => this.client.readContract({
             address: this.address,
-            abi: [], // TODO: Import ABI
+            abi: this.abi,
             functionName,
             args
         }));
