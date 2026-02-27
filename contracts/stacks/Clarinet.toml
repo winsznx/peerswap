@@ -1,5 +1,5 @@
 [project]
-name = "chainregistry"
+name = "peerswap"
 description = "Decentralized username registry on Stacks"
 authors = ["winsznx"]
 telemetry = false
