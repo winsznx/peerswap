@@ -8,7 +8,7 @@
 
 ## Reporting a Vulnerability
 
-We take the security of ChainRegistry seriously. If you discover a security vulnerability, please follow these steps:
+We take the security of PeerSwap seriously. If you discover a security vulnerability, please follow these steps:
 
 1. **Do Not** disclose the vulnerability publicly until it has been addressed
 2. Email details to: timjosh507@gmail.com
