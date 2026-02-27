@@ -1,8 +1,8 @@
 {
-  "name": "chainregistry",
+  "name": "peerswap",
   "version": "1.0.0",
   "private": true,
-  "description": "Decentralized username/domain registry with ownership transfer on Base and Stacks",
+  "description": "Trustless atomic swap protocol with hash time-locked contracts on Base and Stacks blockchains.",
   "scripts": {
     "dev": "pnpm --filter web dev",
     "build": "pnpm --filter web build",
